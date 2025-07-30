@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Modern To-Do App</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+ 
+</head>
+
+<body>
+  <div class="sidebar">
+    <h2>Menu</h2>
+    <ul>
+      <li onclick="showSection('upcomingSection')">Upcoming</li>
+      <li onclick="showSection('todaySection')"><strong>Today</strong></li>
+      <li onclick="showSection('calendarSection')">Calendar</li>
+      <li>Sticky Wall</li>
+    </ul>
+    <h2>Lists</h2>
+    <ul>
+      <li style="color: #e74c3c;">Personal</li>
+      <li style="color: #3498db;">Work</li>
+      <li style="color: #f1c40f;">List 1</li>
+    </ul>
+    <h2>Tags</h2>
+    <ul>
+      <li style="color: #1abc9c;">Tag 1</li>
+      <li style="color: #ff6b81;">Tag 2</li>
+    </ul>
+  </div>
+
+  <div class="main">
+    <div class="main-header">
+      <h1>Today</h1>
+      <button class="theme-toggle" onclick="toggleTheme()">🌓 Theme</button>
+    </div>
+
+    <div id="todaySection" class="section">
+      <div class="add-task">
+        <input type="text" id="taskInput" placeholder="Add New Task...">
+        <button onclick="addTask()">Add Task</button>
+      </div>
+      <div class="task-count" id="taskCount"  style="display: flex;">0</div>
+      <ul class="task-list" id="taskList"></ul>
+    </div>
+
+    <div id="upcomingSection" class="section" style="display:none;">
+      <h1>Upcoming Tasks</h1>
+      <div class="upcoming-group">
+        <h2>Today</h2>
+        <div class="add-task">
+          <input type="text" id="taskTodayInput" placeholder="Add task for today...">
+          <button onclick="addTaskToDate('today')">Add</button>
+        </div>
+        <ul class="task-list" id="upcomingToday"></ul>
+
+        <h2>Tomorrow</h2>
+        <div class="add-task">
+          <input type="text" id="taskTomorrowInput" placeholder="Add task for tomorrow...">
+          <button onclick="addTaskToDate('tomorrow')">Add</button>
+        </div>
+        <ul class="task-list" id="upcomingTomorrow"></ul>
+
+        <h2>This Week</h2>
+        <div class="add-task">
+          <input type="text" id="taskWeekInput" placeholder="Add task for this week...">
+          <button onclick="addTaskToDate('week')">Add</button>
+        </div>
+        <ul class="task-list" id="upcomingWeek"></ul>
+      </div>
+    </div>
+
+    <div id="calendarSection" class="section" style="display:none;">
+      <h1>Calendar View</h1>
+      <p>This is a placeholder. You can add a calendar UI here later.</p>
+    </div>
+  </div>
+
+<script src="script.js"></script>
+</body>
+
+</html>
